@@ -1,12 +1,12 @@
 <div class="card">
   <form [formGroup]="userForm">
-    <div class="mt-5">
+    <div class="mt-5 box">
       <div class="form-row">
         <div class="col-md-12">
-          <div class="form-group">
+          <div class="form-group mt-4">
             <label>Firstname</label>
           </div>
-          <div class="form-row">
+          <div class="form-row" >
             <div class="col">
               <input type="text" formcontrolnName="first_name" class="form-control" placeholder="first_name">
             </div>
@@ -14,10 +14,10 @@
         </div>
         <br>
         <div class="col-md-12">
-          <div class="form-group">
+          <div class="form-group mt-4">
             <label>Lastname</label>
           </div>
-          <div class="form-row">
+          <div class="form-row" >
             <div class="col">
               <input type="text" formcontrolnName="last_name" class="form-control" placeholder="last_name">
             </div>
@@ -25,27 +25,45 @@
         </div>
         <br>
         <div class="col-md-12">
-          <div class="form-group">
+          <div class="form-group mt-4">
             <label>Email</label>
           </div>
-          <div class="form-row">
+          <div class="form-row" >
             <div class="col">
               <input type="text" formcontrolnName="email" class="form-control" placeholder="email">
             </div>
           </div>
         </div>
         <br>
-<div class="form-row mt-4">
-<div class="col-md-6">
-<button type="button" class="btn btn-primary">Add</button>
-<button type="button" class="btn btn-primary">Reset</button>
+        <div class="form-row mt-4">
+          <div class="col-6">
+            <button type="button" class="btn btn-primary"(click)="addItem()">Add</button> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 
-</div>
-
-
-</div>
-
+            
+            <button type="button" class="btn btn-primary"(click)="reset()">Reset</button>
+          </div>
+        </div>
       </div>
     </div>
   </form>
-</div>
+  <div class="col-md-8 mt-4 mb-4">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listData">
+          <td>{{item.first_name}}</td>
+          <td>{{item.last_name}}</td>
+          <td>{{item.email}}</td>
+          <td><button type="button" class="btn btn-primary" (click)="removeItems(item)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
