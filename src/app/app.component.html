@@ -6,7 +6,7 @@
           <div class="form-group mt-4">
             <label>Firstname</label>
           </div>
-          <div class="form-row" >
+          <div class="form-row">
             <div class="col">
               <input type="text" formcontrolnName="first_name" class="form-control" placeholder="first_name">
             </div>
@@ -17,7 +17,7 @@
           <div class="form-group mt-4">
             <label>Lastname</label>
           </div>
-          <div class="form-row" >
+          <div class="form-row">
             <div class="col">
               <input type="text" formcontrolnName="last_name" class="form-control" placeholder="last_name">
             </div>
@@ -28,7 +28,7 @@
           <div class="form-group mt-4">
             <label>Email</label>
           </div>
-          <div class="form-row" >
+          <div class="form-row">
             <div class="col">
               <input type="text" formcontrolnName="email" class="form-control" placeholder="email">
             </div>
@@ -37,11 +37,12 @@
         <br>
         <div class="form-row mt-4">
           <div class="col-6">
-            <button type="button" class="btn btn-primary"(click)="addItem()">Add</button> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+            <button type="button" class="btn btn-primary" (click)="addItem()">Add</button> &nbsp; &nbsp; &nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;
             &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 
-            
-            <button type="button" class="btn btn-primary"(click)="reset()">Reset</button>
+
+            <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
           </div>
         </div>
       </div>
@@ -51,9 +52,9 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Email</th>
+          <th>first_name</th>
+          <th>last_name</th>
+          <th>email</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -67,3 +68,4 @@
       </tbody>
     </table>
   </div>
+</div>
