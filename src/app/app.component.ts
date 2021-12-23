@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
@@ -7,21 +7,39 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  userForm: FormGroup
+  userForm: FormGroup;
+  listData: any;
   title: any;
 
-  constructor(private fb:FormBuilder){
-this.userForm=this.fb.group({
-first_name:['',Validators.required],
-last_name:['',Validators.required],
-email:['',Validators.required]
+  constructor(private fb: FormBuilder) {
+
+    this.listData = [];
+    this.userForm = this.fb.group({
+      first_name: ['', Validators.required],
+      last_name: ['', Validators.required],
+      email: ['', Validators.required]
 
 
-})
-}
-ngOnInit(){
+    })
+  }
+  addItem() {
+    this.listData.push(this.userForm.value);
+    this.userForm.reset();
+  }
+
+  reset() {
+    this.userForm.reset();
+  }
+
+  removeItems(element: any) {
+    this.listData.forEach((value: any, index: any) => {
+      if (value == element) {
+        this.listData.splice(index, 1)
+      }
+
+    });
 
   }
 }
