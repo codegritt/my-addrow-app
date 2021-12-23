@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'my-addrow-app';
+export class AppComponent implements OnInit {
+
+  userForm: FormGroup
+
+  constructor(private fb:FormBuilder){
+this.userForm=this.fb.group({
+first_name:['',Validators.required],
+last_name:['',Validators.required],
+email:['',Validators.required]
+
+
+})
+}
+ngOnInit(){
+
+  }
 }
