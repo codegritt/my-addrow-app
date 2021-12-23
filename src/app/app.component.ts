@@ -1,6 +1,5 @@
-import { Component,  } from '@angular/core';
+import { Component, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
@@ -8,9 +7,9 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent  {
+export class AppComponent {
 
-  
+
 
 
   userForm: FormGroup;
@@ -20,7 +19,7 @@ export class AppComponent  {
   constructor(private fb: FormBuilder) {
 
 
-   
+
 
     this.listData = [];
     this.userForm = this.fb.group({
@@ -31,8 +30,8 @@ export class AppComponent  {
 
     })
   }
-  
-  addItem() {
+
+  public addItem(): void {
     this.listData.push(this.userForm.value);
     this.userForm.reset();
   }

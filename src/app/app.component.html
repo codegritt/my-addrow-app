@@ -36,7 +36,7 @@
         </div>
         <br>
         <div class="form-row mt-4">
-          <div class="col-6">
+          <div class="col-md-6">
             <button type="button" class="btn btn-primary" (click)="addItem()">Add</button> &nbsp; &nbsp; &nbsp;&nbsp;
             &nbsp; &nbsp;&nbsp;
             &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
@@ -60,9 +60,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of listData">
-          <td>{{item.first_name}}</td>
-          <td>{{item.last_name}}</td>
-          <td>{{item.email}}</td>
+          <td><span>{{item.first_name}}</span></td>
+          <td><span>{{item.last_name}}</span></td>
+          <td><span>{{item.email}}</span></td>
           <td><button type="button" class="btn btn-primary" (click)="removeItems(item)">Delete</button></td>
         </tr>
       </tbody>
